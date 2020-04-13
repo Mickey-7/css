@@ -1,0 +1,44 @@
+.slide {
+    /* set width & height to 100 view port */
+    width: 100vw;
+    height: 100vh;
+}
+.wrapper {
+    /* will put each elemnent next to each other */
+    display: flex;
+    flex-direction: row;
+    /* total width of the view width */
+    width: 400vw;
+    /* opposite rotation to outer-wrapper */
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+}
+/* set different color for each slide */
+.one{
+    background: #efdefe;
+}
+.two {
+    background: #a3f3d3;
+}
+.three {
+    background: #0bbaa0;
+}
+.four {
+    background: #00dfdf;
+}
+.outer-wrapper {
+    /* rotating the outet-wrapper */
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display:none;
+}
