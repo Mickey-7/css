@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+ 
+}
+
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* check width of img */
+    /* 6 movement of img */
+    width: calc(1536px / 6);
+    /* check height of img */
+    height: 256px;
+
+    /* set background */
+    background: url(spritestrip.webp);
+
+    animation: animate 1s steps(6) infinite;
+}
+
+/* animation */
+@keyframes animate {
+    from{
+        background-position: 0;
+    }
+    to{
+        /* width size of img */
+        background-position: 1536px;
+    }
+}
