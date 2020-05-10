@@ -1,0 +1,8 @@
+images link : https://unsplash.com/
+
+convert .jfif to .png
+
+on index1.html
+     <div class="card" style="background-image: url(images/img1.png);">1</div>
+make sure that there something inside the div tag (1 in this case)
+so that the background-image on property will be visible on the browser

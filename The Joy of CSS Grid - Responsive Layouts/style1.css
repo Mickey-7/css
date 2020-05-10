@@ -1,0 +1,38 @@
+.photo-grid{
+    display: grid;
+    gap: 1rem;
+    /* will consume the whole width */
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-auto-rows: 240px;
+
+
+
+}
+
+   /* span start / end */
+/* .card-tall{
+    grid-row: span 2 /auto;
+} */
+
+    /* span start / end */
+/* .card-wide{
+    grid-column: span 2 / auto;
+} */
+
+
+/* making responsive for small screen devices*/
+
+@media screen and (min-width: 600px){
+    
+    .card-tall{
+        /* span start / end */
+        grid-row: span 2 /auto;
+    }
+    
+    .card-wide{
+            /* span start / end */
+        grid-column: span 2 / auto;
+    }
+}
+
+

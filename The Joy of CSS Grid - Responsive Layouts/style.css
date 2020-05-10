@@ -1,0 +1,40 @@
+.basic-grid{
+    display: grid;
+    gap: 1rem;
+
+    /* will make n column based on how many fr there is,
+    in this case we have 7 columns with equal sizes*/
+    /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
+
+    /* we can also do */
+    /* grid-template-columns: 2fr 1fr 1fr */
+    /* which will give 3 column but 2fr will consume 50% space */
+
+    /* we can also do the shorthand method */
+    /* grid-template-columns: repeat(12, 1fr); */
+    /* which will give 12 columns of same sizes */
+
+    /* giving 240px sizes to each card */
+    /* grid-template-columns: repeat(17,minmax(240px, 1fr)); */
+    /* above will cause oveflow on width which scrollbar will appear */
+
+    /* to not cause overflow, we use autofit */
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    /* horizontal scrollbar  will dissapear but still giving 240px size each */
+
+    /* NOTE :  */
+    /* auto-fill - consumes only filledup width
+    auto-fit - consumes entire width */
+
+    /* the number of div inside section in .html must be equal
+    to the first parameter of repeat() */
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  
+}
