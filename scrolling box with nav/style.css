@@ -1,0 +1,47 @@
+body {
+  background-color: #333;
+  /* need this combinations for the parent div to center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* need to set flex-direction: column, 
+  to make the content next to each 
+  opther in single cloumn only */
+  flex-direction: column;
+}
+
+nav {
+  width: 200px;
+  background-color: #000;
+  /* occupy some vertical space - 1em for top & bottom padding */
+  padding: 1em 0;
+  /* to make nav > a center */
+  text-align: center;
+}
+
+nav > a {
+  color: aliceblue;
+  /* some horizontal space - 1em for left & right margin  */
+  margin: 0 1em;
+  /* rmeove underline */
+  text-decoration: none;
+}
+
+.scrolling-box {
+  width: 200px;
+  background-color: #eaeaea;
+  height: 200px;
+  /* invoke scrol bar */
+  overflow-y: scroll;
+}
+
+section {
+  height: 100%;
+  /* using the combination below to center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* notive that the height of .scrolling-box > section */
+/* notive the same width for nav and .scrolling-box */

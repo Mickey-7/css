@@ -1,0 +1,22 @@
+.tech-slideshow {
+  height: 200px;
+  max-width: 800px;
+  /* need to hide overflow to remove horizontal scroll bar */
+  overflow-x: hidden;
+}
+
+@keyframes moveSlideShowLeft {
+  100% {
+    transform: translateX(-67%);
+  }
+}
+
+/* invoke the animation above */
+.mover-1 {
+  height: 200px;
+  width: 2526px;
+  background: url(./Artboard.png);
+  animation: moveSlideShowLeft 12s linear infinite;
+}
+
+/* note that width of the .mover-1 is > .tech-slideshow */

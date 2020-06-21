@@ -1,0 +1,108 @@
+body {
+  background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  /* for the center to take effect, must be used with display: flex */
+  display: flex;
+  justify-content: center;
+}
+
+.pacman {
+  width: 100px;
+  height: 100px;
+  background: #f2d648;
+  margin-top: 20px;
+  /* to make it circle */
+  border-radius: 50%;
+  /* since this is the parent div for pacman, we need to set position: relative; */
+  position: relative;
+}
+
+.pacman_eye {
+  /* we need to set position: absolute, since it is under pacman class */
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  right: 40px;
+  top: 20px;
+  background: #222222;
+}
+
+/* Using clip-path to draw the mouth */
+.pacman_mouth {
+  background: #000;
+  /* we need to set position: absolute, since it is under pacman class */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* The polygon() function let’s us draw a free-form shape inside the bounds of the element 
+  and that shape serves as a mask that only displays that portion of the element. */
+  clip-path: polygon(100% 78%, 46% 51%, 100% 24%);
+
+  /* added fopr anitmation */
+  animation-name: eat;
+  animation-duration: 0.6s;
+  animation-iteration-count: infinite;
+}
+
+/* Make Pac-Man eat */
+/* All we need to do is animate the clip-path property, 
+and we’ll use @keyframes for that. 
+I’m naming this animation eat: */
+@keyframes eat {
+  0% {
+    clip-path: polygon(100% 78%, 46% 51%, 100% 24%);
+  }
+  25% {
+    clip-path: polygon(100% 65%, 46% 51%, 100% 39%);
+  }
+  50% {
+    clip-path: polygon(100% 51%, 46% 51%, 100% 51%);
+  }
+  75% {
+    clip-path: polygon(100% 65%, 46% 51%, 100% 39%);
+  }
+  100% {
+    clip-path: polygon(100% 78%, 46% 51%, 100% 24%);
+  }
+}
+
+/* We’ve got our keyframes in place, so let’s add it to our .pacman_mouth class.
+ We could use the shorthand animation property, 
+ but I’ve broken out the properties to make things more self-explanatory
+  so you can see what’s going on: */
+
+/* We’ve gotta feed Pac-Man */
+.pacman_food {
+  /* we need to set position: absolute, since it is under pacman class */
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  /* to make it circle */
+  border-radius: 50%;
+  top: 40%;
+  left: 120px;
+
+  /* for animation */
+  animation-name: food;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+/* Let’s make the food come to him using another sprinkle of CSS animation: */
+@keyframes food {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+/* Now we only need to pass this animation to our .pacman__food class. */

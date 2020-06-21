@@ -1,0 +1,45 @@
+body {
+  height: 100vh;
+  /* combination to cneter the conten */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* need to set flex-direction: column, 
+  to make the content next to each 
+  opther in single cloumn only */
+  flex-direction: column;
+}
+
+.smiley {
+  height: 100px;
+  width: 110px;
+  /* need to set position: relative, as it is the parent div  */
+  position: relative;
+  /* for animation */
+  animation: moveUpDown 7s linear infinite;
+}
+
+.smiley-down {
+  background: url("./Artboard-d.svg");
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 110px;
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+}
+
+/* for shadow */
+.shadow {
+  background: url("./Ellipse-5.svg");
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
